@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy 11 Months ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #050505, #120812, #1b0d1b, #2b1030);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .hearts {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .heart {
+      position: absolute;
+      color: rgba(255, 105, 180, 0.25);
+      animation: floatUp linear infinite;
+      font-size: 20px;
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(100vh) scale(0.8);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-10vh) scale(1.2);
+        opacity: 0;
+      }
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 80px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .hero {
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      color: #ff6aa2;
+      margin-bottom: 15px;
+      text-shadow: 0 0 20px rgba(255, 106, 162, 0.35);
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #f6d8ff;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      line-height: 1.8;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff4f87, #b04bff);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 10px 30px rgba(176, 75, 255, 0.35);
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px) scale(1.03);
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: 'Dancing Script', cursive;
+      font-size: 3rem;
+      color: #ff8cc6;
+      margin-bottom: 18px;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: #f1d6ff;
+      max-width: 760px;
+      margin: 0 auto 45px;
+      line-height: 1.8;
+    }
+
+    .memory-grid, .love-grid, .future-grid, .open-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .memory-grid {
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    }
+
+    .love-grid, .future-grid, .open-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: 22px;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.22);
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 105, 180, 0.35);
+    }
+
+    .memory-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 18px;
+      margin-bottom: 16px;
+    }
+
+    .memory-card h3,
+    .love-card h3,
+    .future-card h3,
+    .open-card h3 {
+      color: #ff8cc6;
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .memory-card p,
+    .love-card p,
+    .future-card p,
+    .open-card p {
+      color: #f5e8ff;
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    .love-card {
+      text-align: center;
+      padding: 28px 20px;
+    }
+
+    .love-card .num {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #c47dff;
+      margin-bottom: 10px;
+    }
+
+    .song-box, .final-box {
+      max-width: 820px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .song-box iframe {
+      width: 100%;
+      min-height: 152px;
+      border: none;
+      border-radius: 20px;
+      margin-top: 20px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    }
+
+    .footer-note {
+      text-align: center;
+      padding: 40px 20px 60px;
+      color: #d7b4ea;
+      font-size: 0.95rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* PASSWORD SCREEN */
+    .password-screen {
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(180deg, #050505, #120812, #1b0d1b, #2b1030);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 9999;
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .password-screen.fade-out {
+      opacity: 0;
+      transform: scale(1.03);
+      pointer-events: none;
+    }
+
+    .password-box {
+      max-width: 760px;
+      width: 100%;
+      text-align: center;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 30px;
+      padding: 40px 25px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+      transition: 0.3s ease;
+    }
+
+    .password-box h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(2.7rem, 7vw, 4.8rem);
+      color: #ff6aa2;
+      margin-bottom: 15px;
+    }
+
+    .password-box p {
+      color: #f6d8ff;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .password-input {
+      width: min(320px, 90%);
+      padding: 15px 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.08);
+      color: white;
+      font-size: 1rem;
+      text-align: center;
+      outline: none;
+      margin-bottom: 18px;
+      transition: 0.3s ease;
+    }
+
+    .password-input::placeholder {
+      color: #d8bce8;
+    }
+
+    .password-input:focus {
+      border-color: rgba(255, 140, 198, 0.8);
+      box-shadow: 0 0 20px rgba(255, 140, 198, 0.25);
+    }
+
+    .unlock-btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff4f87, #b04bff);
+      color: white;
+      border: none;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(176, 75, 255, 0.35);
+      transition: 0.3s ease;
+    }
+
+    .unlock-btn:hover {
+      transform: translateY(-3px) scale(1.03);
+    }
+
+    .hint-text {
+      margin-top: 18px;
+      color: #d7b4ea;
+      font-size: 0.95rem;
+    }
+
+    .error-msg {
+      color: #ff8ea8;
+      margin-top: 14px;
+      font-size: 0.95rem;
+      min-height: 20px;
+    }
+
+    .success-msg {
+      color: #ffd3f0;
+      margin-top: 14px;
+      font-size: 0.95rem;
+      min-height: 20px;
+      text-shadow: 0 0 12px rgba(255, 140, 198, 0.45);
+    }
+
+    .shake {
+      animation: shake 0.4s ease;
+    }
+
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      20% { transform: translateX(-8px); }
+      40% { transform: translateX(8px); }
+      60% { transform: translateX(-6px); }
+      80% { transform: translateX(6px); }
+      100% { transform: translateX(0); }
+    }
+
+    .glow-success {
+      box-shadow: 0 0 30px rgba(255, 140, 198, 0.4),
+                  0 0 60px rgba(176, 75, 255, 0.25),
+                  0 20px 50px rgba(0,0,0,0.35);
+      transform: scale(1.02);
+    }
+
+    /* MAIN SITE ENTRY */
+    #mainSite {
+      display: none;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    #mainSite.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* CLICK TO REVEAL LETTERS */
+    .reveal-card {
+      cursor: pointer;
+      overflow: hidden;
+      transition: 0.35s ease;
+    }
+
+    .reveal-card h3 {
+      margin-bottom: 0;
+      transition: 0.3s ease;
+    }
+
+    .hidden-message {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      margin-top: 0;
+      transition: all 0.45s ease;
+    }
+
+    .reveal-card.active .hidden-message {
+      max-height: 300px;
+      opacity: 1;
+      margin-top: 15px;
+    }
+
+    .reveal-card.active h3 {
+      color: #ffd0ea;
+    }
+
+    /* SECRET POPUP */
+    .secret-popup {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.72);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 10000;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .secret-popup.show {
+      display: flex;
+      opacity: 1;
+    }
+
+    .secret-box {
+      max-width: 700px;
+      width: 100%;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 28px;
+      padding: 35px 25px;
+      text-align: center;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+      animation: popupRise 0.5s ease;
+    }
+
+    @keyframes popupRise {
+      from {
+        transform: translateY(25px) scale(0.96);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+    }
+
+    .secret-box h2 {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      color: #ff8cc6;
+      margin-bottom: 16px;
+    }
+
+    .secret-box p {
+      color: #f6d8ff;
+      line-height: 1.9;
+      font-size: 1rem;
+      margin-bottom: 25px;
+    }
+
+    .close-popup {
+      border: none;
+      padding: 12px 24px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff4f87, #b04bff);
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.98rem;
+      transition: 0.3s ease;
+    }
+
+    .close-popup:hover {
+      transform: translateY(-2px) scale(1.03);
+    }
+
+    @media (max-width: 600px) {
+      .hero p, .section-sub {
+        font-size: 0.98rem;
+      }
+
+      .section-title {
+        font-size: 2.4rem;
+      }
+
+      .memory-card img {
+        height: 220px;
+      }
+
+      .password-box,
+      .secret-box {
+        padding: 30px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hearts" id="hearts"></div>
+
+  <!-- PASSWORD SCREEN -->
+  <div id="passwordScreen" class="password-screen">
+    <div class="password-box" id="passwordBox">
+      <h1>For You, My Love ❤️</h1>
+      <p>
+        I made this little place just for you, my princess.  
+        Enter the password to open your surprise.
+      </p>
+
+      <input
+        type="password"
+        id="passwordInput"
+        class="password-input"
+        placeholder="Enter password..."
+      />
+
+      <br>
+      <button class="unlock-btn" onclick="checkPassword()">Unlock My Surprise</button>
+
+      <div class="error-msg" id="errorMsg"></div>
+      <div class="success-msg" id="successMsg"></div>
+      <p class="hint-text">Hint: Its a name that doesnt exist in our life yet, but soon it will and only we both know of it hehehehhe.(first letter caps rest all small) 💌</p>
+    </div>
+  </div>
+
+  <!-- MAIN WEBSITE -->
+  <div id="mainSite">
+
+    <!-- HERO -->
+    <section>
+      <div class="container hero">
+        <h1>Happy 11 Months, My Little baby princess ❤️</h1>
+        <p>
+          My pretty little princess,
+          Its already been 11 months now. we have come so far. i know we have had lots of downs cause of me and the all the bs i did. But baby i promise i am being so much better and i will keep being much better i wont hurt you again. i love you so much my baby. I want to spend my entire life with you. Theres so much things in my mind that i want to do with you. Until my last breath i want you right next to me by my side. i love you so much. We will get through all of this, please dont leave me baby. I know this might be selfish but i cant live without you.. Whatever u want me to change ill change i promise just please dont leave me. But if u do end up liking some other guy, then feel free to tell me. I will let you go and go away forever.
+        </p>
+        <a href="#journey" class="btn">Open Your Surprise</a>
+      </div>
+    </section>
+
+    <!-- OUR JOURNEY -->
+    <section id="journey">
+      <div class="container">
+        <h2 class="section-title">Our Journey</h2>
+        <p class="section-sub">
+          From the beginning until now… every little memory with you has become
+          a part of me.
+        </p>
+
+        <div class="memory-grid">
+          <div class="card memory-card">
+            <img src="photo1.jpg" alt="Memory 1">
+            <h3>The Beginning</h3>
+            <p>The moment everything slowly started changing for me in the best way possible.</p>
+          </div>
+
+          <div class="card memory-card">
+            <img src="photo2.jpg" alt="Memory 2">
+            <h3>When We Became “Us”</h3>
+            <p>That stage where you stopped being just someone special and became my person.</p>
+          </div>
+
+          <div class="card memory-card">
+            <img src="photo3.jpg" alt="Memory 3">
+            <h3>Comfort</h3>
+            <p>Loving you started feeling like home, even through a screen and distance.</p>
+          </div>
+
+          <div class="card memory-card">
+            <img src="photo4.jpg" alt="Memory 4">
+            <h3>Now</h3>
+            <p>11 months later, and I’d still choose you over and over again.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11 THINGS -->
+    <section>
+      <div class="container">
+        <h2 class="section-title">11 Things I Love About You</h2>
+        <p class="section-sub">
+          There are way more than 11… but this is a good start.
+        </p>
+
+        <div class="love-grid">
+          <div class="card love-card"><div class="num">1</div><h3>Your Smile</h3><p>The way your face brightens up with that sweet little smile when u see me melts my heart every single time.</p></div>
+          <div class="card love-card"><div class="num">2</div><h3>Your Care</h3><p>You treat me like your little baby always makes me feel special and you always take care of me in the most gentle and beautiful way possible .</p></div>
+          <div class="card love-card"><div class="num">3</div><h3>Your Presence</h3><p>No matter how sad and depressed i might be you always know how to make me happy without even saying anything.</p></div>
+          <div class="card love-card"><div class="num">4</div><h3>Your Voice</h3><p>When i hear your voice, it feels as if everything else goes queit and only ur voice plays in my head and it calms me down in ways i cant explain.</p></div>
+          <div class="card love-card"><div class="num">5</div><h3>Your Heart</h3><p>You dont have it, i stole it its mien and i love it, and ur not getting it back BAHAEHBABEA yay mwah.</p></div>
+          <div class="card love-card"><div class="num">6</div><h3>Your Laugh</h3><p>your laugh makes me happy caues my baby is happy and i make u laugh smmmmm cause devu is so funny and devu lieks tickling u.</p></div>
+          <div class="card love-card"><div class="num">7</div><h3>Your piggy face</h3><p>YOUR LITTLE PIGGY FACE IS THE CUTEST THING I HAVE EVER SEEN LIKE ISW THE SECOND I SEE IT I DIE IT MAKES SO HAPPY AND ITS SO ADORABLE AND CUTE AND OMG I HAVE NO WORDS i love it so fucking much.</p></div>
+          <div class="card love-card"><div class="num">8</div><h3>The Way You Love Me</h3><p>The way you admire me and adore me like I am ur fav in this whole world, it makes me feel so special like i have never felt before.</p></div>
+          <div class="card love-card"><div class="num">9</div><h3>Your Eyes</h3><p>Your eyes do things to me, like i cant explain.But when u put kajal and eyeliner and stare at me and then the way it sparkles when i do smth stupid and u smile and admire me and eyes get a little bit smaller cause of ur smile and then theres this sparkle in your eye it just melts me. I could stare at your eyes forever and never get bored of them cause its genuinely the prettiest sight i have ever laid my eyes on.</p></div>
+          <div class="card love-card"><div class="num">10</div><h3>Your Dimple</h3><p>I dont think anyone knows about this cause no one will notice it.It doesnt come normally when u smile.But when i make u smile, and ur smile is bigger than normal u get a tiny little dimple on ur left cheek and its so fuckign cute i die.</p></div>
+          <div class="card love-card"><div class="num">11</div><h3>You</h3><p>I love you so much my pretty little princess💗.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OPEN WHEN -->
+    <section>
+      <div class="container">
+        <h2 class="section-title">Open When…</h2>
+        <p class="section-sub">
+          Little reminders from me for the days you need them most.
+        </p>
+
+        <div class="open-grid">
+          <div class="card open-card reveal-card" onclick="toggleReveal(this)">
+            <h3>💌 Open when you miss me</h3>
+            <div class="hidden-message">
+              <p>If you miss me, just close your eyes and ill be right there. then just text me or call cause whenever my baby needs me ofc u will be my first priority and ill be right there for you.</p>
+            </div>
+          </div>
+
+          <div class="card open-card reveal-card" onclick="toggleReveal(this)">
+            <h3>💌 Open when you’re sad</h3>
+            <div class="hidden-message">
+              <p>If everything feels heavy, talk to me my love i promise you i wont let you go through it alone, ill run to you take u in my arms and we will get through it together no matter it is.</p>
+            </div>
+          </div>
+
+          <div class="card open-card reveal-card" onclick="toggleReveal(this)">
+            <h3>💌 Open when you need reassurance</h3>
+            <div class="hidden-message">
+              <p>Baby i know i have done sm bad things and ik i am not trustworthy. But i will earn your trust back. I wont hurt you ever again. I only want one person, and thats you. I need you baby. I will prove it to you. I will be your sweet little baby once again i promise you</p>
+            </div>
+          </div>
+
+          <div class="card open-card reveal-card" onclick="toggleReveal(this)">
+            <h3>💌 Open when you want to smile</h3>
+            <div class="hidden-message">
+              <p>EY STOP READING THIS AND COME SEE ME IN CALL ILL MAKE U SMILE DUMDUM.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SONG -->
+    <section>
+      <div class="container song-box">
+        <h2 class="section-title">Our Song</h2>
+        <p class="section-sub">
+          Every time I hear this, I think of you.
+        </p>
+
+        <iframe style="border-radius:20px"
+          src="https://open.spotify.com/embed/track/20nWuFO5YrQjgYe9PgTPjO"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy">
+        </iframe>
+      </div>
+    </section>
+
+    <!-- FUTURE -->
+    <section>
+      <div class="container">
+        <h2 class="section-title">The Future I Want With You</h2>
+        <p class="section-sub">
+          I don’t just love what we have now — I love everything we still haven’t lived yet.
+        </p>
+
+        <div class="future-grid">
+          <div class="card future-card"><h3>Late Night Drives</h3><p>Just me and you, my hands running all over you and we keep going enjoying the ride, with some music and enjoying eachother.</p></div>
+          <div class="card future-card"><h3>Movie Nights Together</h3><p>scary movie, us under a blanket with some snacks and we stick to eachother and spend the whole night just cuddling and watching.</p></div>
+          <div class="card future-card"><h3>Food Dates</h3><p>Theres so many restaurents and places i wanna take you to and i wanna feed u sm food and makesure my baby never stays hungry.</p></div>
+          <div class="card future-card"><h3>Holding You</h3><p>Few more years and there wont be this distance between us and then ill be able to pull u closer and hug u super tight whenever i want YAY.</p></div>
+          <div class="card future-card"><h3>Our 1 Year</h3><p>Just one more month and itll be our 1 year anniversary, I know this isnt how we imagined it to be and that it would have been sm better if i hadnt ruined us like that. But baby i promise ill pick up all the broken pieces one by one and fix us no matter how long it takes. I promise</p></div>
+          <div class="card future-card"><h3>More “Us”</h3><p>We are gonna create so much more memories, so many milestones we will get through all our problems. You and me together forever.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL NOTE -->
+    <section id="finalSection">
+      <div class="container final-box">
+        <h2 class="section-title">One Last Thing…</h2>
+        <p class="section-sub" style="font-size:1.05rem;">
+          These 11 months with you have meant more to me than any of my word can ever explain.You make me the happiest man in the whole world.
+          You’ve become the most important part of my life, my comfort, my happiness,my princess, my chellakutty, my kanmani , my little baby
+          and the best thing that has ever happened to me.
+          <br><br>
+          Even with the distance, even with the waiting, even with all the moments we wish we had in person -
+          I still consider myself lucky to have found a perfect wife like you.
+          <br><br>
+          <strong style="color:#ff8cc6;">Happy 11 months, my little baby.</strong><br>
+          And if I had to choose all over again,
+          I’d still choose you. Every single time.
+          I love you so much my baby. And ill love you Forever and ever and ever and ever till my last breath and beyond. 
+        </p>
+      </div>
+    </section>
+
+    <div class="footer-note">
+      Made with love, only for you ❤️
+    </div>
+
+  </div>
+
+  <!-- SECRET POPUP -->
+  <div id="secretPopup" class="secret-popup">
+    <div class="secret-box">
+      <h2>One More Thing 💌</h2>
+      <p>
+        If you made it this far, then you should know one more thing...
+        <br><br>
+        No matter what happens, no matter how many problems arise between us i will always stay there by your side being your support and i will never hurt you again baby. I will make myself worthy of your love and I will become your sweet little baby again.
+        <br><br>
+        Thank you for being my comfort, my joy, my little kitten, my everything. And Thank you for not giving up one me. I wont make u regret it i promise. I will be so much better for you my baby.
+        <br><br>
+        <strong style="color:#ff8cc6;">I love you so much my little princess💗. </strong>
+      </p>
+      <button class="close-popup" onclick="closePopup()">Aww, okay ❤️</button>
+    </div>
+  </div>
+
+  <script>
+    // Floating hearts
+    const heartsContainer = document.getElementById('hearts');
+    for (let i = 0; i < 28; i++) {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '❤';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (8 + Math.random() * 10) + 's';
+      heart.style.animationDelay = Math.random() * 10 + 's';
+      heart.style.fontSize = (14 + Math.random() * 18) + 'px';
+      heartsContainer.appendChild(heart);
+    }
+
+    // CHANGE THIS PASSWORD
+    const correctPassword = "Aradhya";
+
+    const passwordScreen = document.getElementById("passwordScreen");
+    const passwordBox = document.getElementById("passwordBox");
+    const mainSite = document.getElementById("mainSite");
+    const passwordInput = document.getElementById("passwordInput");
+    const errorMsg = document.getElementById("errorMsg");
+    const successMsg = document.getElementById("successMsg");
+    const secretPopup = document.getElementById("secretPopup");
+
+    function checkPassword() {
+      const enteredPassword = passwordInput.value.trim();
+
+      errorMsg.textContent = "";
+      successMsg.textContent = "";
+
+      if (enteredPassword === correctPassword) {
+        successMsg.textContent = "Password accepted 💖 Opening your surprise...";
+        passwordBox.classList.add("glow-success");
+
+        setTimeout(() => {
+          passwordScreen.classList.add("fade-out");
+        }, 600);
+
+        setTimeout(() => {
+          passwordScreen.style.display = "none";
+          mainSite.style.display = "block";
+
+          setTimeout(() => {
+            mainSite.classList.add("show");
+          }, 100);
+        }, 1300);
+
+      } else {
+        errorMsg.textContent = "That’s not the right password, baby 💔";
+        passwordBox.classList.add("shake");
+        passwordInput.value = "";
+
+        setTimeout(() => {
+          passwordBox.classList.remove("shake");
+        }, 450);
+      }
+    }
+
+    passwordInput.addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        checkPassword();
+      }
+    });
+
+    function toggleReveal(card) {
+      card.classList.toggle("active");
+    }
+
+    let popupShown = false;
+
+    window.addEventListener("scroll", () => {
+      const finalSection = document.getElementById("finalSection");
+      const rect = finalSection.getBoundingClientRect();
+
+      if (!popupShown && rect.top < window.innerHeight * 0.45) {
+        popupShown = true;
+        setTimeout(() => {
+          secretPopup.classList.add("show");
+        }, 1000);
+      }
+    });
+
+    function closePopup() {
+      secretPopup.classList.remove("show");
+    }
+  </script>
+
+</body>
+</html>
